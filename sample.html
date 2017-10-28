@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <title>sample</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/sample.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flow.css">
+    <meta charset="utf-8"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script type="text/javascript" src="assets/js/util.js"></script>
+    <script type="text/javascript" src="assets/js/splash.js"></script>
+        <style type="text/css">
+      <!--
+      /* 表示ボタン */
+      #show {
+        /* 画面中央に表示 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -14px;  /* (height + padding-top + padding-bottom + border-top + border-bottom) の半分 */
+        margin-left: -56.5px; /* (width + padding-left + padding-right + border-left + border-right) の半分 */
+      }
+
+      /* メッセージ */
+      .alert {
+        display: none; /* 初期状態は非表示 */
+        width: 300px;
+        /* 画面上部に表示 */
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        margin-left: -175px; /* (width + padding-left + padding-right + border-left + border-right) の半分 */
+      }
+      -->
+    </style>
+     <script language="javascript" type="text/javascript">
+      function display() {
+        alert("test");
+        splash("アラートメッセージ");//, {message_class: 'splashmsg alert'});
+      }
+     </script>
+  </head>
+  <body>
+    <button type="button" name="aaa" value="aaa" onClick="display();">
+      <font size="2">ここを</font><font size="5" color="#333399">押してね</font>
+    </button>
+      
+    <div class="hidden_box">
+      <!--samle.cssの場合labelが先-->     
+      <label for="label1">クリックして表示</label>
+      <!--samle2.cssの場合inputが先-->
+      <input type="checkbox" id="label1"/>
+      <div class="hidden_show">
+        <!--非表示ここから-->     
+        <p><img src="assets/images/face.png"></p>
+        <p>こんにちは</p>
+        <!--ここまで-->
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>半角カナ判定サンプル</h2>
+    <p>ボタンを押すと、テキストボックスの値が半角カナかどうか判定します。</p>
+    <input type="text" id="txt1" style="width:250px;margin:5px;">
+    <input type="button" value=" 半角カナチェック " onclick="test();" style="width:150px;margin:5px;">
+    <div id="area1" class="result">　</div> 
+
+    <hr>
+
+    <h2>吹き出し</h2>
+
+    <!--左の会話-->
+    <div class="talk-wrap">
+      <div class="left-icon" style="background-image: url('assets/images/20170807002405.png');"></div>
+      <div class="talk-left">
+        <p>ちくわ大明神</p>
+      </div>
+    </div><br>
+    <!--左はここまで-->
+    <!--右の会話-->
+    <div class="talk-wrap">
+      <div class="right-icon" style="background-image: url('assets/images/20170807003332.png');"></div>
+      <div class="talk-right">
+        <p>あそこにベンツが停まってますね。</p>
+      </div>
+    </div><br>
+    <!--右はここまで-->
+    <!--左の会話-->
+    <div class="talk-wrap">
+      <div class="left-icon" style="background-image: url('assets/images/20170807002405.png');"></div>
+      <div class="talk-left">
+        <p>あれは私のベンツです。</p>
+      </div>
+    </div><br>
+    <!--左はここまで-->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <hr>
+
+    <div id="contentBlock">
+      <button id="clickButton">Click Here</button>
+    </div>
+
+    <div id="contentBlock2">
+      <button id="clickButton2">Click Here</button>
+    </div>
+
+    <script>
+      var clickButton = document.getElementById('clickButton');
+      clickButton.addEventListener('click', function () {
+        alert('Alert!');
+      });
+      var clickButton2 = document.getElementById('clickButton2');
+      clickButton2.addEventListener('click', function () {
+        alert('Alert!');
+      });
+      var contentBlock = document.getElementById('contentBlock');
+      contentBlock.innerHTML = '<b>Test:</b>' + contentBlock.innerHTML;
+      var contentBlock2 = document.getElementById('contentBlock2');
+      contentBlock2.insertAdjacentHTML('afterbegin', '<b>Test:</b>');
+    </script>
+
+    <hr>
+
+<!--     表示ボタン 
+    <button id="show" class="btn btn-info">メッセージを表示</button>
+     メッセージ 
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      (function ($) {
+        // 表示ボタンクリックでメッセージを表示
+        $('#show').on('click', function () {
+          /*
+           * 1秒かけてメッセージを表示し、
+           * その後2秒間何もせず、
+           * その後2秒かけてメッセージを非表示にする
+           */
+          $('.alert').fadeIn(1000).delay(2000).fadeOut(2000);
+        });
+        // メッセージ内の×ボタンクリックでメッセージを非表示にする
+        $('.alert .close').on('click', function () {
+          $(this).parents('.alert').hide();
+        });
+      })(jQuery);
+    </script>-->
+    <br>
+    <div id="link_back">
+      <a href="index.html">戻る</a>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/floating.css">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        const input = '.form__floating__input';
+        const label = '.form__floating__label';
+
+        $(input).each(function () {
+          if ($(this).val() !== "") {
+            $(this).prev(label).addClass('active');
+          }
+        });
+
+        $(input)
+          .focus(function () {
+            $(this).prev(label).addClass('active');
+          })
+          .blur(function () {
+            if ($(this).val() === "") {
+              $(this).prev(label).removeClass('active');
+            }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <form class="form">
+      <p class="form__floating">
+        <label class="form__floating__label" for="name">Name</label>
+        <input class="form__floating__input" id="name" type="text" name="name" placeholder="名前をご記入下さい。">
+      </p>
+      <p class="form__floating">
+        <label class="form__floating__label" for="Address">Adress</label>
+        <input class="form__floating__input" id="Address" type="text" name="Address" placeholder="アドレスをご記入ください。">
+      </p>
+    </form>
+  </body>
+</html>
